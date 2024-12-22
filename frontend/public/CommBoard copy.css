@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    font-family: 'Nanum Barun Gothic'; 
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.littletitle {
+    margin-left: 180px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 280px; /* 로고 이미지의 너비 조정 */
+    height: auto; /* 높이 자동 조정 */
+    margin-left: 150px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.popular-posts {
+    margin-bottom: 5px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 450px; /* 검색창 너비 조정 */
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    border-radius: 13px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0080ff;
+    box-shadow: 1px 1px 10px 0px rgba(40, 40, 40, 0.5);
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+.main-container {
+    display: flex;
+}
+.sidebar {
+    width: 200px;
+    height: auto;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar ul li {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px; /* 서브메뉴와의 간격을 조정하기 위해 여유를 줍니다. */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #898989;
+    display: block;
+    padding: 10px 0; /* 메뉴 항목에 상하 여백을 추가합니다. */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #223c75;
+}
+
+/* 서브메뉴 기본 숨김 */
+.submenu {
+    list-style-type: none;
+    padding-left: 20px; /* 서브메뉴가 오른쪽으로 들여쓰기 되도록 설정 */
+    margin-top: 10px; /* 상위 메뉴와의 간격을 조정 */
+}
+
+.sidebar ul li .submenu li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: light;
+}
+
+.submenu li a {
+    color: #898989;
+}
+
+.submenu li a:hover {
+    text-decoration: underline;
+    color: #223c75;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.notice{
+    font-weight: bolder;
+    font-size: 22px;
+    margin-right: 300px;
+}
+
+.notice-list ul {
+    list-style: none;
+    margin-right: 150px;
+    border-top: 1px solid #353535;
+    
+}
+
+.notice-list ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #353535;
+    margin: 10px 10px;
+}
+
+.notice-list ul li a {
+    text-decoration: none;
+    color: #000000;
+    flex: 1;
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.notice-list ul li span {
+    color: #888;
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 20px 5px;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.footer {
+    background-color: #6e6e6e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #444;
+    margin-top: 100px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-links {
+    margin-top: 10px;
+}
+
+.footer .social-links a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.footer .social-links a:hover {
+    color: #fff;
+}

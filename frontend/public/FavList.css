@@ -1,0 +1,358 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+body {
+    margin: 0;
+    font-family: 'Nanum Barun Gothic'; 
+    width: 1920px;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.littletitle {
+    margin-top: -20px;
+    margin-left: 180px;
+    font-weight: 700;
+    color: #c0c0c0;
+    
+}
+.search-record{
+    display: inline-block;
+    font-weight: 400;
+    color: #9f9f9f;
+    margin-left: 100px;
+    font-size: small;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 280px; /* 로고 이미지의 너비 조정 */
+    height: auto; /* 높이 자동 조정 */
+    margin-left: 150px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.popular-posts {
+    margin-bottom: 5px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 450px; /* 검색창 너비 조정 */
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    border-radius: 13px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0080ff;
+    box-shadow: 1px 1px 10px 0px rgba(40, 40, 40, 0.5);
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center;
+}
+
+.user-actions span {
+    margin-bottom: 10px; /* 접속자 수와 버튼 간의 여백 */
+    
+}
+
+.user-actions-buttons {
+    display: flex;
+    flex-direction: row; /* 버튼은 가로로 정렬 */
+    justify-content: center; /* 버튼을 가운데 정렬 */
+    align-items: center;
+}
+
+.user-actions-buttons button {
+    margin-left: 10px; /* 버튼 간의 간격 */
+    padding: 5px 10px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.sidebar {
+    position:absolute; /* 사이드바를 페이지에 고정 */
+    top: 257px; /* 헤더 높이만큼 내려서 위치 */
+    left: 160px; /* 페이지 왼쪽에서 0px 위치 */
+    width: 200px; /* 사이드바의 너비 */
+    height: calc(100vh - 257px); /* 화면의 전체 높이에서 헤더 높이 및 사이드바 상단 여백을 제외 */
+    background-color: rgba(255, 255, 255, 0);
+    overflow-y: auto; /* 사이드바 내용이 넘칠 경우 스크롤 추가 */
+    padding: 10px; /* 사이드바 안쪽 여백 */
+    z-index: 1000; /* 사이드바가 다른 콘텐츠 위에 보이도록 */
+}
+
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar ul li {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px; /* 서브메뉴와의 간격을 조정하기 위해 여유를 줍니다. */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #898989;
+    display: block;
+    padding: 10px 0; /* 메뉴 항목에 상하 여백을 추가합니다. */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #223c75;
+}
+
+/* 서브메뉴 기본 숨김 */
+.submenu {
+    list-style-type: none;
+    padding-left: 20px; /* 서브메뉴가 오른쪽으로 들여쓰기 되도록 설정 */
+    margin-top: 10px; /* 상위 메뉴와의 간격을 조정 */
+    display: none; /* 서브메뉴를 기본적으로 숨깁니다. */
+}
+
+.sidebar ul li .submenu li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: light;
+}
+.sidebar ul li a.active-link {
+    color: #223c75; /* 파란색으로 변경 */
+    font-weight: bold; /* 글씨 두껍게 */
+}
+
+.submenu li a {
+    color: #898989;
+}
+
+.submenu li a:hover {
+    text-decoration: underline;
+    color: #223c75;
+}
+.active-link {
+    color: #223c75; 
+    font-weight: bold; }
+
+main {
+    margin-left: 200px; /* 사이드바 너비 만큼의 여백 */
+    display: flex;
+    justify-content: center; /* 콘텐츠를 수평 중앙에 배치 */
+    align-items: center; /* 콘텐츠를 수직 중앙에 배치 */
+    height: calc(100vh - 257px); /* 화면의 전체 높이에서 헤더 높이 및 사이드바 상단 여백을 제외 */
+    padding: 20px; /* 콘텐츠의 패딩 */
+}
+
+.content {
+    width: 100%; /* 콘텐츠의 너비를 100%로 설정하여 중앙 정렬 */
+    max-width: 1200px; /* 콘텐츠의 최대 너비 (필요시 조정 가능) */
+    text-align: center;
+}
+.category-menu {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.category-menu button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 15px;
+    border-style: none;
+}
+
+.category-menu a {
+    
+        padding: 7px 10px;
+        border: 2px solid #8aacda; /* 하늘색 테두리 지정 */
+        border-radius: 20px;
+        font-weight: bolder;
+        font-size: 15px;
+        outline: none; /* 브라우저 기본 outline 제거 */
+        box-shadow: none; /* 그림자 효과 제거 */
+        margin-right: 10px;
+
+
+        
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.notice {
+    font-weight: bolder;
+    font-size: 22px;
+    margin-right: 300px;
+    border-bottom: 2px solid #898989;
+    padding-bottom: 10px; /* 경계선과 텍스트 사이에 여백 추가 */
+    width: 1000px; /* 경계선의 너비를 찜 목록과 맞추기 */
+    margin-bottom: 20px; /* 경계선 아래에 여백 추가 */
+    margin: 0 auto;
+}
+
+.heart-list {
+    width: 1000px; /* 찜 목록 전체 너비 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.heart-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.heart-list ul li {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px; /* 목록 항목의 너비를 1000px로 고정 */
+    padding: 15px 0;
+    border-bottom: 1px solid #353535; /* 항목 간의 경계선을 1000px로 설정 */
+}
+
+.heart-list ul li:last-child {
+    border-bottom: none; /* 마지막 항목은 경계선을 제거 */
+}
+
+.heart-list ul li a {
+    text-decoration: none;
+    color: #000000;
+    flex: 1;
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.heart-list ul li span {
+    margin-left: 25px;
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 20px 5px;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.footer {
+    background-color: #6e6e6e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #444;
+    margin-top: 100px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-links {
+    margin-top: 10px;
+}
+
+.footer .social-links a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.footer .social-links a:hover {
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.pagination button {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 20px 5px;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,411 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    font-family: 'Nanum Barun Gothic'; 
+        width: 1920px;
+
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.littletitle {
+    margin-top: -20px;
+    margin-left: 180px;
+    font-weight: 700;
+    color: #c0c0c0;
+    
+}
+.search-record{
+    display: inline-block;
+    font-weight: 400;
+    color: #9f9f9f;
+    margin-left: 100px;
+    font-size: small;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 280px; /* 로고 이미지의 너비 조정 */
+    height: auto; /* 높이 자동 조정 */
+    margin-left: 150px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.popular-posts {
+    margin-bottom: 5px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 450px; /* 검색창 너비 조정 */
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    border-radius: 13px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0080ff;
+    box-shadow: 1px 1px 10px 0px rgba(40, 40, 40, 0.5);
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.user-actions {
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center;
+}
+
+.user-actions span {
+    margin-bottom: 10px; /* 접속자 수와 버튼 간의 여백 */
+    
+}
+
+.user-actions-buttons {
+    display: flex;
+    flex-direction: row; /* 버튼은 가로로 정렬 */
+    justify-content: center; /* 버튼을 가운데 정렬 */
+    align-items: center;
+}
+
+.user-actions-buttons button {
+    margin-left: 10px; /* 버튼 간의 간격 */
+    padding: 5px 10px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.sidebar {
+    position:absolute; /* 사이드바를 페이지에 고정 */
+    top: 257px; /* 헤더 높이만큼 내려서 위치 */
+    left: 160px; /* 페이지 왼쪽에서 0px 위치 */
+    width: 200px; /* 사이드바의 너비 */
+    height: calc(100vh - 257px); /* 화면의 전체 높이에서 헤더 높이 및 사이드바 상단 여백을 제외 */
+    background-color: rgba(255, 255, 255, 0);
+    overflow-y: auto; /* 사이드바 내용이 넘칠 경우 스크롤 추가 */
+    padding: 10px; /* 사이드바 안쪽 여백 */
+    z-index: 1000; /* 사이드바가 다른 콘텐츠 위에 보이도록 */
+}
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar ul li {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px; /* 서브메뉴와의 간격을 조정하기 위해 여유를 줍니다. */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #898989;
+    display: block;
+    padding: 10px 0; /* 메뉴 항목에 상하 여백을 추가합니다. */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #223c75;
+}
+
+/* 서브메뉴 기본 숨김 */
+.submenu {
+    list-style-type: none;
+    padding-left: 20px; /* 서브메뉴가 오른쪽으로 들여쓰기 되도록 설정 */
+    margin-top: 10px; /* 상위 메뉴와의 간격을 조정 */
+    display: none; /* 서브메뉴를 기본적으로 숨깁니다. */
+}
+
+.sidebar ul li .submenu li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: light;
+}
+.sidebar ul li a.active-link {
+    color: #223c75; /* 파란색으로 변경 */
+    font-weight: bold; /* 글씨 두껍게 */
+}
+
+.submenu li a {
+    color: #898989;
+}
+
+.submenu li a:hover {
+    text-decoration: underline;
+    color: #223c75;
+}
+.active-link {
+    color: #223c75; 
+    font-weight: bold; }
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+.content {
+    margin-left: 300px; /* 사이드바 너비 만큼의 여백 */
+    padding: 20px; /* 콘텐츠의 패딩 */
+}
+.filter-section button {
+    
+    padding: 10px 15px;
+    border: 2px solid #8aacda; /* 하늘색 테두리 지정 */
+    border-radius: 20px;
+    background-color: #ffffff; /* 버튼 배경색 */
+    font-weight: bolder;
+    font-size: 15px;
+    outline: none; /* 브라우저 기본 outline 제거 */
+    box-shadow: none; /* 그림자 효과 제거 */
+    margin: 15px;
+}
+
+/* 전체 페이지의 컨테이너에 여백 추가 */
+.page-container {
+    margin-left: 510px; /* 페이지 전체를 왼쪽에서 510px 만큼 띄움 */
+}
+
+/* 드롭다운 및 테이블 */
+.dropdown-container, .table-container {
+    margin-left: 0px; /* 자식 요소들에 추가 마진이 적용되지 않도록 설정 */
+}
+
+/* 드롭다운 컨테이너 */
+.dropdown-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* 드롭다운 버튼 */
+.dropbtn {
+    background-color: white;
+    border: 2px solid #8aacda; /* 하늘색 테두리 */
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: bolder;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 드롭다운 컨텐츠 */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%; /* 중앙 정렬을 위해 left를 50%로 설정 */
+    transform: translateX(-50%); /* 중앙 정렬 */
+    top: 100%; /* 버튼 바로 아래에 위치하게 함 */
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1;
+    margin-top: 5px;
+    border: 2px solid #8aacda; /* 드롭다운 테두리 색상 */
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* 드롭다운 항목 */
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* 마지막 항목의 아래쪽 경계선 제거 */
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* 드롭다운 항목 호버 시 배경 색상 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 특정 드롭다운의 버튼을 호버할 때만 드롭다운 표시 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.announcement-table {
+    min-width: 300px;
+}
+/* 테이블 컨테이너 */
+
+table {
+    width: 90%; /* 테이블이 페이지 전체 너비를 차지하도록 설정 */
+    border-collapse: collapse;
+    table-layout: fixed; /* 고정된 레이아웃을 사용 */
+    align-items: center;
+}
+
+/* 테이블 헤더 및 데이터 셀의 정렬을 중앙으로 설정 */
+th, td {
+    text-align: center; /* 수평 가운데 정렬 */
+    vertical-align: middle; /* 수직 가운데 정렬 */
+    padding: 30px; /* 셀 내부 여백 */
+    font-size: 16px;
+}
+
+/* 테이블 헤더 스타일 */
+th {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    text-overflow: ellipsis; /* 내용이 너무 길 경우 말줄임 표시 */
+    overflow: hidden;
+    white-space: nowrap; /* 내용이 한 줄로 표시되도록 설정 */
+    background-color: #ffffff;
+}
+th:hover {
+    background-color: #ffffff; /* 호버 시 배경색을 기본 색상과 동일하게 설정 */
+    cursor: default; /* 커서를 기본 화살표로 설정 */
+}
+
+/* 각 열의 너비를 설정 */
+th:nth-child(1), td:nth-child(1) {
+    width: 10%; /* 첫 번째 열 (예: D-37) */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 35%; /* 제목 열 */
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 30%; /* 신청기한 열 - 더 넓게 설정 */
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 15%; /* 주관 열 */
+}
+
+th:nth-child(5), td:nth-child(5) {
+    width: 10%; /* 조회 열 */
+}
+
+tr {
+    border-bottom: 1px solid #ddd; /* 행 사이에 구분선을 추가 */
+}
+
+/* 테이블 행의 hover 스타일 */
+tr:hover {
+    background-color: #f9f9f9; /* 호버 시 배경색 변경 */
+}
+
+/* 마지막 행의 구분선 제거 */
+tr:last-child {
+    border-bottom: none;
+}
+
+/* 페이지네이션 컨테이너 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.pagination button {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 20px 5px;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
+
+.footer {
+    background-color: #6e6e6e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #444;
+    margin-top: 100px;
+}
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+.footer a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer .social-links {
+    margin-top: 10px;
+}
+.footer .social-links a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #1e90ff;
+    text-decoration: none;
+}
+.footer .social-links a:hover {
+    color: #fff;
+}

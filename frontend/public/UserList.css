@@ -1,0 +1,453 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1920px; /* 최대 너비 설정 */
+}
+
+.sidebar {
+    width: 486px;
+    background-color: #636363;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    position: fixed; /* 왼쪽에 고정 */
+    left: 0;
+    top: 0;
+    z-index: 1; /* 사이드바를 위에 위치 */
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 모든 요소를 왼쪽 정렬 */
+}
+
+.mode-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 13px;
+}
+
+label {
+    font-size: 20px;
+    color: #B3B3B3;
+    margin-right: 30px;
+    padding-left: 0;
+    width: auto;
+    font-weight: 400;
+}
+
+.site-icon {
+    width: 350px;
+    height: 123px;
+    background-color: #D9D9D9;
+    margin-top: 30px;
+}
+.sa {
+    font-weight: 400;
+    font-size: 20px;
+    color: #E4E4E4;
+    margin-top: 20px; /* 간격 조정 */
+    text-align: left;
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-item {
+    color: #E4E4E4; 
+    text-decoration: none; 
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 25px; /* 간격을 줄임 */
+}
+
+/* 기본 메뉴 스타일 */
+.sidebar-menu {
+    margin-top: 5px; /* 강제 간격 조정 */
+    padding-top: 0; /* 패딩도 최소화 */
+    margin-bottom: 5px; /* 하단 간격도 최소화 */
+    padding-left: 0; /* 왼쪽 패딩 제거 */
+
+}
+
+.sidebar-menu ul {
+    list-style-type: none;
+    padding-left: 0; /* 기본 padding 제거 */
+    margin-top: 0;
+    
+}
+
+.sidebar-menu ul li {
+    list-style: none;
+    margin: 10px 0; /* 메뉴 간의 간격 조정 */
+    padding-left: 0; /* 왼쪽 정렬을 위한 패딩 제거 */
+}
+
+.menu-item:hover {
+    color: #B3B3B3; /* 호버 시 색상 */
+}
+
+
+/* 'active' 클래스가 있을 때 스타일 */
+.menu-item.active {
+    color: #223C75; /* 클릭된 항목 색상 */
+}
+.special {
+    margin-left: 0; /* 필요시 왼쪽 마진 조정 */
+    padding-left: 0; /* 필요시 왼쪽 패딩 조정 */
+    gap: 16px;
+}
+
+.submenu {
+    display: none; /* 기본적으로 서브메뉴는 숨김 */
+    flex-direction: column; /* 서브메뉴가 세로로 배치되도록 */
+    margin-bottom: 30px;
+    display: none;
+}
+
+.submenu-item {
+    padding-left: 55px;
+    color: #E4E4E4; /* 서브메뉴 기본 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    display: block;
+    margin: 5px 0; /* 서브메뉴 간의 간격 */
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.submenu-item.active {
+    color: #223C75; /* 서브메뉴 클릭 시 색상 변경 */
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    font-size: 14px;
+    color: #E4E4E4; /* 서브메뉴 기본 색상 */
+    text-decoration: none;
+}
+
+/* 메인 메뉴 활성화 상태 */
+.menu-item.active {
+    color: #223C75; /* 활성화된 메인 메뉴의 글자색 */
+    font-weight: bold;
+}
+
+/* 서브메뉴 활성화 상태 */
+.submenu-item.active {
+    color: #223C75; /* 활성화된 서브메뉴의 글자색 */
+    font-weight: bold;
+}
+
+/* 서브메뉴 기본 상태 */
+.submenu {
+    display: none; /* 기본적으로 닫힘 상태 */
+}
+
+/* 활성화된 메뉴의 서브메뉴 열기 */
+.menu-item.active + .submenu {
+    display: block; /* 활성화된 메인 메뉴의 서브메뉴 열기 */
+}
+
+
+
+
+.mode-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px; /* 버튼들 사이의 간격 */
+}
+
+.mode-buttons button {
+    flex: 1;
+    width: 58px;
+    height: 21px;
+    border: 1px;
+    cursor: pointer;
+    background-color: #4C4C4C;
+    color: #B3B3B3;
+    border-radius: 13.5px;
+
+}
+
+.web-site {
+    font-size: 20px;
+    color: #B3B3B3;
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    text-decoration: none; /* 밑줄 제거 */
+    padding-left: 0;
+    display: flex; /* 텍스트와 이미지가 나란히 정렬되도록 설정 */
+    align-items: center; /* 텍스트와 이미지 수직 정렬 */
+    gap: 18px; /* 텍스트와 아이콘 사이의 간격 */
+    font-weight: 400;
+}
+
+.mode-buttons button:nth-child(1) {
+    font-size: 10px; /* 첫 번째 버튼의 폰트 크기 */
+}
+
+.mode-buttons button:nth-child(2) {
+    font-size: 10px; /* 두 번째 버튼의 폰트 크기 */
+}
+
+.mode-buttons button:nth-child(3) {
+    font-size: 7px; /* 세 번째 버튼의 폰트 크기 */
+}
+
+.resources {
+    font-weight: 400;
+    font-size: 20px;
+    color: #E4E4E4;
+    margin-top: 60px; /* 간격 조정 */
+    text-align: left;
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.resources button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+}
+.resources ul {
+    list-style-type: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    margin: 0; /* 기본 마진 제거 */
+}
+
+/* 메인 영역 */
+.controls {
+    display: flex;
+    align-items: center;  /* 세로 가운데 정렬 */
+    gap: 5px;            /* 각 요소 간격 */
+    width: 1200px;          /* 부모 요소 너비 */
+    justify-content: flex-start; 
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 세로 가운데 정렬 */
+    align-items: center; /* 가로 가운데 정렬 */
+    margin-left: 486px; /* 사이드바의 너비만큼 여백 */
+    height: 100vh; /* 화면 전체 높이 */
+}
+
+.search-bar {
+    display: flex;
+    align-items: right;
+    background-color: #D9D9D9;
+    height: 52px;
+    border-radius: 8px;   /* 모서리 둥글게 */
+    overflow: hidden;
+}
+
+.search-bar input {
+    width: 538px;         /* 검색 입력 너비 */
+    height: 52px;         
+    font-size: 16px;
+    border: none;
+    background-color: inherit;
+    outline: none;
+}
+
+.search-bar button {
+    margin-left: 260px;
+    width: 52px;          /* 버튼 너비 */
+    height: 100%;         
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.date-filter input {
+    width: 160px;         /* 날짜 입력 필드 너비 */
+    height: 52px;         
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    background-color: #D9D9D9;
+    margin: 0 5px;        /* 날짜 필드 사이 간격 */
+    outline: none;
+}
+
+#loadData,#addUser {
+    width: 200px;         /* 조회 버튼 너비 */
+    height: 52px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px; 
+}
+
+#addUser{
+    margin-left: 20px;
+}
+
+table {
+    width: 1276px;
+    height: 700px;
+    border-collapse: collapse;
+    margin: 10px 20px ;
+    table-layout: fixed; /* 고정된 레이아웃 */
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+}
+
+th:nth-child(3) { /* 이메일 열 */
+    width: 180px; /* 원하는 너비 설정 */
+}
+th:nth-child(4) { /* 이메일 열 */
+    width: 250px; /* 원하는 너비 설정 */
+}
+
+th:nth-child(6) { /* 마지막 비밀번호 변경일 열 */
+    width: 200px; /* 원하는 너비 설정 */
+}
+/* 검색 바와 날짜 필터도 중앙 정렬 */
+.search-bar, .date-filter {
+    width: 100%; /* 테이블과 일관된 너비로 조절 */
+    max-width: 1200px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center; /* 가로 정렬 */
+    gap: 10px; /* 요소 간 간격 */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    
+}
+.pagination button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    color: #636363;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    padding: 0;
+}
+
+.pagination button:hover {
+    background-color: #d9d9d9;
+}
+
+.pagination button:active {
+    background-color: #ccc;
+}
+
+.pagination .page.active {
+    font-weight: bold;
+    background-color: #636363;
+    color: #ffffff;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .search-bar input {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  .search-bar button {
+    padding: 5px;
+  }
+  
+  .date-filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .date-filter input {
+    margin: 0 5px;
+  }
+  
+
+  .active-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* 셀 높이에 맞춤 */
+}
+  .active-status .green {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+  }
+  
+  .active-status .red {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .userList-button {
+    padding: 5px 10px;
+    background-color: #D9D9D9;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.userList-button:hover {
+    background-color: #D9D9D9;
+}
