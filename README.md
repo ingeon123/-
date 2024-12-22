@@ -1,5 +1,13 @@
 # 수요자 맞춤형 공공정보 제공 서비스
 
+## 개발 환경
+ - **언어** : JavaScript
+ - **라이브러리/프레임워크**
+  - **프론트엔드** : react(useEffect, useState, Link, useNavigate
+  - **백엔드** : node.js(express, exec), Python(aiohttp, asyncio, BeautifulSoup)
+ - **데이터베이스** : MySQL
+ - **개발 도구** : Visual Studio Code, HeidiSQL
+
 ## 주요 기능
 ### 프론트엔드
 - 사용자 페이지
